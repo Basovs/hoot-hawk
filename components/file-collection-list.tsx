@@ -51,7 +51,7 @@ const FileCollection = ({ fileCollection }: FileCollectionProps) => {
       <div className="flex items-center">
         {files.map((file) => {
           return (
-            <TooltipProvider>
+            <TooltipProvider key={file.id}>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button size="sm" variant="ghost">
