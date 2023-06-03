@@ -1,7 +1,7 @@
 import Link from "next/link"
-import { InputWithLabel } from "@/components/input-with-label"
 import { Button } from "@/components/ui/button"
 import { UploadFileForm } from "@/components/upload-file-form"
+import { FileDetailsForm } from "@/components/file-details-form"
 
 export default function Home() {
   return (
@@ -33,17 +33,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="flex flex-col gap-2 *">
-          <InputWithLabel label="Piegādātājs *" />
-          <InputWithLabel label="Reģ. Nr. *" />
-          <InputWithLabel label="PVN Nr." />
-          <InputWithLabel label="Dokumenta Nr." />
-          <InputWithLabel label="Valūta" />
-          <InputWithLabel label="PVN%" />
-          <InputWithLabel label="Netto" />
-          <InputWithLabel label="PVN" />
-          <InputWithLabel label="Summa" />
-        </div>
+        <FileDetailsForm />
       </div>
     </div>
   )

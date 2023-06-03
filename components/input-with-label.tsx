@@ -1,15 +1,48 @@
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "./react-hook-form/form"
 
 interface Props {
-  label: string
+  form: any
+  name: string
+  label?: string
+  placeholder?: string
+  type?: string
 }
 
-export function InputWithLabel({ label }: Props) {
+export function InputWithLabel({
+  form,
+  name,
+  label,
+  type = "text",
+  placeholder,
+}: Props) {
   return (
-    <div className="grid w-full max-w-sm items-center gap-1.5">
-      <Label htmlFor="email">{label}</Label>
-      <Input type="email" id="email" placeholder="Email" />
-    </div>
+    <FormField
+      control={form.control}
+      name={name}
+      render={({ field }: any) => (
+        <FormItem>
+          <div>
+            <FormLabel>{label}</FormLabel>
+            <FormControl>
+              <Input
+                id={name}
+                type={type}
+                placeholder={placeholder}
+                {...field}
+              />
+            </FormControl>
+          </div>
+
+          <FormMessage />
+        </FormItem>
+      )}
+    />
   )
 }
