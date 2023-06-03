@@ -2,8 +2,27 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { UploadFileForm } from "@/components/upload-file-form"
 import { FileDetailsForm } from "@/components/file-details-form"
+import { CosmosClient } from "@azure/cosmos"
+import FileColelctionList from "@/components/file-collection-list"
 
-export default function Home() {
+export default async function Home() {
+  const client = new CosmosClient({
+    endpoint: process.env.COSMOS_URL!,
+    key: process.env.COSMOS_KEY!,
+  })
+
+  const database = client.database(process.env.DATABASE_ID!)
+  const container = database.container(process.env.CONTAINER_ID!)
+
+  // Query data
+  const querySpec = {
+    query: "SELECT * from database_id",
+  }
+
+  const { resources: fileCollections } = await container.items
+    .query(querySpec)
+    .fetchAll()
+
   return (
     <div className="flex h-full gap-10 w-full max-w-[700px] justify-between">
       <div className="w-full">
@@ -18,6 +37,8 @@ export default function Home() {
         </div>
 
         <UploadFileForm />
+
+        <FileColelctionList fileCollections={fileCollections} />
       </div>
 
       <div className="w-[1px] bg-gray-900" />
