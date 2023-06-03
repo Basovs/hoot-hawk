@@ -1,5 +1,6 @@
 interface FileCollection {
   id: string
+  collection_name: string
 }
 
 interface FileColelctionListProps {
@@ -26,11 +27,11 @@ interface FileCollectionProps {
 }
 
 const FileCollection = ({ fileCollection }: FileCollectionProps) => {
-  const { id } = fileCollection
+  const { collection_name } = fileCollection
 
   return (
     <div className="p-4 rounded border">
-      <p>{id}</p>
+      <p>{collection_name}</p>
     </div>
   )
 }
