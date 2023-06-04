@@ -12,7 +12,7 @@ export interface File {
 
 export interface FileCollection {
   id: string
-  collection_name: string
+  created_at: string
   files: File[]
 }
 
@@ -40,7 +40,7 @@ interface FileCollectionProps {
 }
 
 const FileCollection = ({ fileCollection }: FileCollectionProps) => {
-  const { collection_name, files } = fileCollection
+  const { created_at, files } = fileCollection
 
   const { setSelectedFileCollection, setSelectedFile, selectedFile } =
     useFileCollectionStore()
@@ -72,7 +72,7 @@ const FileCollection = ({ fileCollection }: FileCollectionProps) => {
       onClick={() => handleClickOnFileCollection(fileCollection)}
       className="px-4 py-2 rounded border flex justify-between items-center"
     >
-      <p>{collection_name}</p>
+      <p>{created_at}</p>
 
       <div className="flex items-center">
         {files.map((file) => {
