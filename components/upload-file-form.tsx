@@ -84,11 +84,15 @@ export function UploadFileForm() {
 
     try {
       console.log("BEFORE POST -> ")
-      await axios.post("http://20.121.55.74:5000/img_rec", payload, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
+      await axios.post(
+        "https://www.lksajflksajflksfjlkjafslksja.social/img_rec",
+        payload,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
       console.log("AFTER POST -> ")
     } catch (error) {
       console.error("Error submitting AttachmentCollection", error)
