@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { UploadFileForm } from "@/components/upload-file-form"
-import { FileDetailsForm } from "@/components/file-details-form"
 import FileColelctionList from "@/components/file-collection-list"
 import { fileCollectionContainer } from "@/configs/init-cosmos-db"
+import RightSide from "@/components/right-side"
 
 // Query
 const querySpec = {
@@ -35,17 +35,7 @@ export default async function Home() {
       <div className="w-[1px] bg-gray-900" />
 
       <div className="w-full">
-        <div className="flex justify-between gap-4 items-center flex-1 h-20">
-          <p className="font-bold">Faila dati</p>
-
-          <a target="_blank" href="/api/documents/1234567">
-            <Button variant="link" className="text-blue-500">
-              API
-            </Button>
-          </a>
-        </div>
-
-        <FileDetailsForm />
+        <RightSide />
       </div>
     </div>
   )

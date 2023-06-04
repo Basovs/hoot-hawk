@@ -133,7 +133,7 @@ const InputMultipleFileUpload: FC<InputMultipleFileUploadProps> = (props) => {
               <a href="#" className="underline">
                 atrodi
               </a>{" "}
-              tavā datorā.
+              savā datorā.
             </p>
           </div>
         </div>
