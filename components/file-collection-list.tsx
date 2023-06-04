@@ -8,6 +8,15 @@ import { useFileCollectionStore } from "@/stores/use-file-collection-store"
 export interface File {
   id: string
   file_name: string
+  supplier: string
+  reg_no: string
+  vat_nr: string
+  doc_nr: string
+  currency: string
+  vat_rate: string
+  net: string
+  vat_sum: string
+  total_sum: string
 }
 
 export interface FileCollection {
@@ -25,11 +34,8 @@ export default function FileColelctionList({
 }: FileColelctionListProps) {
   return (
     <div className="flex flex-col gap-2 mt-4">
-      {fileCollections.map((fileCollection) => (
-        <FileCollection
-          key={fileCollection.id}
-          fileCollection={fileCollection}
-        />
+      {fileCollections.map((fileCollection, i) => (
+        <FileCollection key={i} fileCollection={fileCollection} />
       ))}
     </div>
   )
@@ -75,9 +81,9 @@ const FileCollection = ({ fileCollection }: FileCollectionProps) => {
       <p>{created_at}</p>
 
       <div className="flex items-center">
-        {files.map((file) => {
+        {files.map((file, i) => {
           return (
-            <Tooltip key={file.id}>
+            <Tooltip key={i}>
               <TooltipTrigger asChild>
                 <Button
                   size="sm"

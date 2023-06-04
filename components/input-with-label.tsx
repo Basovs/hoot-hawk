@@ -4,6 +4,7 @@ import { useFormContext } from "react-hook-form"
 
 interface Props {
   name: string
+  value: string | undefined
   label?: string
   placeholder?: string
   type?: string
@@ -11,6 +12,7 @@ interface Props {
 
 export function InputWithLabel({
   name,
+  value = "",
   label,
   type = "text",
   placeholder,
@@ -24,6 +26,7 @@ export function InputWithLabel({
         type={type}
         placeholder={placeholder}
         {...register(name)}
+        value={value}
       />
     </>
   )

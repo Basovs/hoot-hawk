@@ -27,8 +27,8 @@ export default function RightSide() {
           </div>
 
           <div className="mb-2">
-            {selectedFileCollection.files.map((file) => (
-              <Tooltip key={file.id}>
+            {selectedFileCollection.files.map((file, i) => (
+              <Tooltip key={i}>
                 <TooltipTrigger asChild>
                   <Button
                     size="sm"
