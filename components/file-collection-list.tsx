@@ -1,11 +1,6 @@
 import { PaperclipIcon } from "lucide-react"
 import { Button } from "./ui/button"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "./ui/tooltip"
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip"
 
 interface File {
   id: string
@@ -51,18 +46,16 @@ const FileCollection = ({ fileCollection }: FileCollectionProps) => {
       <div className="flex items-center">
         {files.map((file) => {
           return (
-            <TooltipProvider key={file.id}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button size="sm" variant="ghost">
-                    <PaperclipIcon key={file.id} size={14} />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{file.file_name}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+            <Tooltip key={file.id}>
+              <TooltipTrigger asChild>
+                <Button size="sm" variant="ghost">
+                  <PaperclipIcon key={file.id} size={14} />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{file.file_name}</p>
+              </TooltipContent>
+            </Tooltip>
           )
         })}
       </div>
