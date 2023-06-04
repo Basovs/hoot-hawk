@@ -1,24 +1,16 @@
 import { Button } from "@/components/ui/button"
 import { UploadFileForm } from "@/components/upload-file-form"
 import { FileDetailsForm } from "@/components/file-details-form"
-import { CosmosClient } from "@azure/cosmos"
 import FileColelctionList from "@/components/file-collection-list"
+import { fileCollectionContainer } from "@/configs/init-cosmos-db"
+
+// Query
+const querySpec = {
+  query: "SELECT * from database_id",
+}
 
 export default async function Home() {
-  const client = new CosmosClient({
-    endpoint: process.env.COSMOS_URL!,
-    key: process.env.COSMOS_KEY!,
-  })
-
-  const database = client.database(process.env.DATABASE_ID!)
-  const container = database.container(process.env.CONTAINER_ID!)
-
-  // Query data
-  const querySpec = {
-    query: "SELECT * from database_id",
-  }
-
-  const { resources: fileCollections } = await container.items
+  const { resources: fileCollections } = await fileCollectionContainer.items
     .query(querySpec)
     .fetchAll()
 

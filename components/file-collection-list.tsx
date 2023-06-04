@@ -1,13 +1,16 @@
+"use client"
+
 import { PaperclipIcon } from "lucide-react"
 import { Button } from "./ui/button"
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip"
+import { useFileCollectionStore } from "@/stores/use-file-collection-store"
 
 interface File {
   id: string
   file_name: string
 }
 
-interface FileCollection {
+export interface FileCollection {
   id: string
   collection_name: string
   files: File[]
@@ -39,8 +42,17 @@ interface FileCollectionProps {
 const FileCollection = ({ fileCollection }: FileCollectionProps) => {
   const { collection_name, files } = fileCollection
 
+  const { setSelectedFileCollection } = useFileCollectionStore()
+
+  const handleClickOnFileCollection = () => {
+    setSelectedFileCollection(fileCollection)
+  }
+
   return (
-    <div className="px-4 py-2 rounded border flex justify-between items-center">
+    <div
+      onClick={handleClickOnFileCollection}
+      className="px-4 py-2 rounded border flex justify-between items-center"
+    >
       <p>{collection_name}</p>
 
       <div className="flex items-center">
