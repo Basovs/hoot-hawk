@@ -10,20 +10,20 @@ export default function AboutUsPage() {
       </h2>
 
       <p className="">
-        Komanda <b>"Hook & Hawk"</b> ir dinamiska piecu profesionāļu alianse,
-        kas radās hackathonā. Katrs no mums ienes savas unikālas prasmes, radot
-        sinerģiju un veidojot spēcīgu kopumu. Mēs esam izveidojuši platformu,
-        kas, izmantojot mūsu izstrādāto API, spēj izvilkt informāciju no finanšu
-        dokumentiem un pārvērst to JSON formātā. Šis API ir pielāgojams un
-        integrējams jebkurā dokumentu pārvaldības platformā, atverot jaunas
-        iespējas datu pārvaldības un analīzes jomā.
+        Komanda <b>&quot;Hook &amp; Hawk&quot;</b> ir dinamiska piecu
+        profesionāļu alianse, kas radās hackathonā. Katrs no mums ienes savas
+        unikālas prasmes, radot sinerģiju un veidojot spēcīgu kopumu. Mēs esam
+        izveidojuši platformu, kas, izmantojot mūsu izstrādāto API, spēj izvilkt
+        informāciju no finanšu dokumentiem un pārvērst to JSON formātā. Šis API
+        ir pielāgojams un integrējams jebkurā dokumentu pārvaldības platformā,
+        atverot jaunas iespējas datu pārvaldības un analīzes jomā.
       </p>
 
       <p className="">
         Mūsu īpašā pieeja ir balstīta uz AI trenētu datu izmantošanu, kas
         nodrošina precīzu un efektīvu informācijas iegūšanu. Mūsu specializācija
         ir dokumentu nolasīšana un datu uzglabāšana tieši latviešu valodā, kas
-        ir nianses, ko mūsu "kolēģi" bieži izvēlas ignorēt.
+        ir nianses, ko mūsu &quot;kolēģi&quot; bieži izvēlas ignorēt.
       </p>
 
       <p className="">
