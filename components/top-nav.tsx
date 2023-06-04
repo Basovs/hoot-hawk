@@ -15,7 +15,7 @@ export default function TopNav() {
           variant="link"
           className={pathname === "/" ? "font-bold" : ""}
         >
-          Home
+          Uz Sākumu
         </Button>
       </Link>
 
@@ -25,7 +25,7 @@ export default function TopNav() {
           variant="link"
           className={pathname === "/about-us" ? "font-bold" : ""}
         >
-          About Us
+          Par Mums
         </Button>
       </Link>
     </div>

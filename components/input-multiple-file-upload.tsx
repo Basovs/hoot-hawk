@@ -125,15 +125,15 @@ const InputMultipleFileUpload: FC<InputMultipleFileUploadProps> = (props) => {
 
           <div>
             <h2 className="font-medium">
-              {`Select file${maxFiles && maxFiles === 1 ? "" : "s"}`}
+              {`Izvēlies failu${maxFiles && maxFiles === 1 ? "" : "s"}`}
             </h2>
 
             <p className="text-sm leading-4 text-gray-500 dark:text-gray-300">
-              {`Drop file${maxFiles && maxFiles === 1 ? "" : "s"}`} or{" "}
+              {`Iemet failu${maxFiles && maxFiles === 1 ? "" : "s"}`} vai{" "}
               <a href="#" className="underline">
-                browse
+                atrodi
               </a>{" "}
-              through your machine.
+              tavā datorā.
             </p>
           </div>
         </div>

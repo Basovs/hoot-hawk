@@ -18,7 +18,7 @@ export default async function Home() {
     <div className="flex h-full gap-10 w-full max-w-[700px] justify-between">
       <div className="w-full">
         <div className="flex justify-between gap-4 items-center flex-1 h-20">
-          <p className="font-bold">All files</p>
+          <p className="font-bold">Visi faili</p>
 
           <a target="_blank" href="/api/documents">
             <Button variant="link" className="text-blue-500">
@@ -36,7 +36,7 @@ export default async function Home() {
 
       <div className="w-full">
         <div className="flex justify-between gap-4 items-center flex-1 h-20">
-          <p className="font-bold">File details</p>
+          <p className="font-bold">Faila dati</p>
 
           <a target="_blank" href="/api/documents/1234567">
             <Button variant="link" className="text-blue-500">

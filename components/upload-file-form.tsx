@@ -114,7 +114,7 @@ export function UploadFileForm() {
             type="submit"
             className="bg-green-500 hover:bg-green-600 w-full"
           >
-            Upload
+            Augšuplādēt
           </Button>
         </div>
       </form>
