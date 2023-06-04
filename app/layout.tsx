@@ -23,7 +23,7 @@ export default function RootLayout({
           <main className="flex flex-col items-center min-h-screen p-4">
             <TopNav />
 
-            <BirdIcon size={100} />
+            <BirdIcon size={100} strokeWidth={2.5} />
             <h1 className="text-6xl font-black mb-10">Hoot & Hawk</h1>
 
             {children}
