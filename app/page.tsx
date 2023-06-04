@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { UploadFileForm } from "@/components/upload-file-form"
 import { FileDetailsForm } from "@/components/file-details-form"
@@ -29,11 +28,11 @@ export default async function Home() {
         <div className="flex justify-between gap-4 items-center flex-1 h-20">
           <p className="font-bold">All files</p>
 
-          <Link href="/api/documents">
+          <a target="_blank" href="/api/documents">
             <Button variant="link" className="text-blue-500">
               API
             </Button>
-          </Link>
+          </a>
         </div>
 
         <UploadFileForm />
@@ -47,11 +46,11 @@ export default async function Home() {
         <div className="flex justify-between gap-4 items-center flex-1 h-20">
           <p className="font-bold">File details</p>
 
-          <Link href="/api/documents/1234567">
+          <a target="_blank" href="/api/documents/1234567">
             <Button variant="link" className="text-blue-500">
               API
             </Button>
-          </Link>
+          </a>
         </div>
 
         <FileDetailsForm />
