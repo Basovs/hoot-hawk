@@ -17,11 +17,13 @@ export default function RightSide() {
           <div className="flex justify-between gap-4 items-center flex-1 h-20">
             <p className="font-bold">Faila dati</p>
 
-            <a target="_blank" href="/api/documents/1234567">
-              <Button variant="link" className="text-blue-500">
-                API
-              </Button>
-            </a>
+            {/* {selectedFile ? (
+              <a target="_blank" href={`/api/documents/file_collection_3`}>
+                <Button variant="link" className="text-blue-500">
+                  API
+                </Button>
+              </a>
+            ) : null} */}
           </div>
 
           <div className="mb-2">
