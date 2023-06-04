@@ -40,6 +40,23 @@ type CreateAttachmentCollectionInput = {
 
 type FormValues = z.infer<typeof validationSchema>
 
+async function getFileDataAsHexString(file: any) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = (event: any) => {
+      // Convert the ArrayBuffer to a hex string
+      const hexString = Array.prototype.map
+        .call(new Uint8Array(event.target.result), (x) =>
+          ("00" + x.toString(16)).slice(-2)
+        )
+        .join("")
+      resolve(hexString)
+    }
+    reader.onerror = (error) => reject(error)
+    reader.readAsArrayBuffer(file)
+  })
+}
+
 export function UploadFileForm() {
   const methods = useForm<FormValues>({
     defaultValues: { files: [] },
@@ -54,9 +71,20 @@ export function UploadFileForm() {
   const onSubmit = async (formValues: CreateAttachmentCollectionInput) => {
     console.log("formValues666 -> ", formValues)
 
+    // map the files array to match the expected format
+    const filesPromises =
+      formValues.files?.map(async (file) => ({
+        filename: file?.name,
+        data: await getFileDataAsHexString(file),
+      })) || []
+
+    const files = await Promise.all(filesPromises)
+
+    const payload = { files }
+
     try {
       console.log("BEFORE POST -> ")
-      await axios.post("http://20.121.55.74:5000/img_rec", formValues, {
+      await axios.post("http://20.121.55.74:5000/img_rec", payload, {
         headers: {
           "Content-Type": "application/json",
         },

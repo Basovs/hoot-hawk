@@ -45,7 +45,7 @@ export default function RightSide() {
             ))}
           </div>
 
-          {/* {selectedFile ? <FileDetailsForm /> : null} */}
+          {selectedFile ? <FileDetailsForm /> : null}
         </>
       ) : null}
     </>
