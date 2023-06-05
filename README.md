@@ -1,4 +1,8 @@
+### Architecture Diagram
+
 ![diagram](./Architecture-flow.png)
+
+In a nutshell, A user uploads an Image (Finacial doucments, receipts., etc) then the image is processed as input to our custom SDK (Hosted on Azure VM) which uses Vision AI from Azure Cognitive services and uses the scanned output it to translate it to latvian text with OpenAI plugin, Then the processed output it sent back to Website as a text. Voila! Gigitalization of finacial receipts.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
