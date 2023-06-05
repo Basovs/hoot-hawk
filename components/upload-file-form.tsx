@@ -90,9 +90,6 @@ export function UploadFileForm() {
         {
           headers: {
             "Content-Type": "application/json",
-            Origin: "https://hoot-hawk.vercel.app/", // Replace with the actual origin/domain
-            "Access-Control-Request-Method": "POST",
-            "Access-Control-Request-Headers": "Content-Type",
           },
         }
       )
