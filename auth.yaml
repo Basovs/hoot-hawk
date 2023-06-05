@@ -1,0 +1,9 @@
+api_key: '48eaef96484e490f92e4a7dc1c18b124'
+endpoint: 'https://digital-puce-cognitive-service.cognitiveservices.azure.com/'
+gpt_key: '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'
+form_recognizer_api_key: '0adcf616591a41819b4cdd154d61b292'
+form_recognizer_endpoint: 'https://hoot3.cognitiveservices.azure.com/'
+blob_key: 'xrz4Rc43UlYZIC8iUciDXqcLilSGMbF84bCJrW2vtPZjrPZCEQjM4SxyWuCP6TYn595QG/GkYm6K+AStzgCBDw=='
+blob_endpoint: 'https://digitalpucestorage.blob.core.windows.net'
+cosmos_key: 'roxFQ2FewE3yCIQTKNWeldKVpyuNzp0OljcH1VxK0mPDqaDd7s3oticyqvT4XfNMqvJTOxYlwPB5ACDbc7hW5Q=='
+cosmos_endpoint: 'https://db-for-website.documents.azure.com:443/'mylinuxvm@mylinuxvm:~/hoot$ 
